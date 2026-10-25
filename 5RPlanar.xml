@@ -1,0 +1,62 @@
+<mujoco model="Assembly2_OpenChain">
+  <compiler angle="radian"/>
+
+  <asset>
+    <mesh name="base" content_type="model/stl" file="meshes/base.STL"/>
+    <mesh name="actA" content_type="model/stl" file="meshes/actA.STL"/>
+    <mesh name="unactA" content_type="model/stl" file="meshes/unactA.STL"/>
+    <mesh name="unactA2" content_type="model/stl" file="meshes/unactA2.STL"/>
+    <mesh name="actB" content_type="model/stl" file="meshes/actB.STL"/>
+    <mesh name="unactB" content_type="model/stl" file="meshes/unactB.STL"/>
+    <mesh name="unactB2" content_type="model/stl" file="meshes/unactB2.STL"/>
+
+        <texture name="grid" type="2d" builtin="checker" rgb1=".1 .2 .3"
+     rgb2=".2 .3 .4" width="300" height="300"/>
+    <material name="grid" texture="grid" texrepeat="8 8" reflectance=".2"/>
+
+  </asset>
+
+  <worldbody>
+    <geom size=".2 .2 .01" type="plane" material="grid"/>
+
+    <geom type="mesh" rgba="0.85098 0.827451 0.788235 1" mesh="base"/>
+    <body name="actA" pos="-0.0499997 0 0.1095"> 
+      <inertial pos="-0.0395384 7.77737e-10 -0.00437918" quat="0 0.711545 0 0.70264" mass="0.0322184" diaginertia="4.33248e-05 4.08589e-05 2.87717e-06"/>
+      <joint name="joint_actA" axis="0 0 -1"/>
+      <geom type="mesh" rgba="0.34902 0.34902 0.34902 1" mesh="actA"/>
+      <body name="unactA" pos="-0.1 0 -0.008" quat="0.941992 0 0 -0.335636">
+        <inertial pos="0.0770622 0.00457513 -0.00118285" quat="-0.0208863 0.709357 0.0210385 0.704225" mass="0.0162754" diaginertia="5.58375e-05 5.49791e-05 9.5221e-07"/>
+        <joint name="joint_unactA" axis="0 0 -1"/>
+        <geom type="mesh" rgba="0.768627 0.207843 0.152941 1" mesh="unactA"/>
+        <geom pos="0.184675 0.010964 -0.003" quat="0.941992 0 0 0.335636" type="mesh" rgba="0.768627 0.207843 0.152941 1" mesh="unactA2"/>
+
+        <site name="endEff_unactA" pos="0.184675 0.010964 -0.003" size="0.005" type="sphere" rgba="1 0 0 1"/>
+      </body>
+    </body>
+
+    <body name="actB" pos="0.0500002 0 0.1095">
+      <inertial pos="0.0373096 -9.81677e-10 -0.00475185" quat="0 0.70271 0 0.711476" mass="0.0255252" diaginertia="3.68766e-05 3.43634e-05 2.84078e-06"/>
+      <joint name="joint_actB" axis="0 0 -1"/>
+      <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="actB"/>
+      <body name="unactB" pos="0.1 0 -0.011" quat="0.335636 0 0 -0.941992">
+        <inertial pos="0.0770622 -0.00457513 -0.00118285" quat="0.0208863 0.709357 -0.0210385 0.704225" mass="0.0162754" diaginertia="5.58375e-05 5.49791e-05 9.5221e-07"/>
+        <joint name="joint_unactB" axis="0 0 -1"/>
+        <geom type="mesh" rgba="0.768627 0.207843 0.152941 1" mesh="unactB"/>
+        <geom pos="0.184675 -0.010964 0" quat="0.335636 0 0 0.941992" type="mesh" rgba="0.768627 0.207843 0.152941 1" mesh="unactB2"/>
+
+        <site name="endEff_unactB" pos="0.184675 -0.010964 0" size="0.005" type="sphere" rgba="0 0 1 1"/>
+      </body>
+    </body>
+  </worldbody>
+
+  <!-- Close chain constraints-->
+  <equality>
+    <connect name="endEff" active="true" site1="endEff_unactA" site2="endEff_unactB" solref="0.005 1" />
+  </equality>
+
+  <actuator>
+    <position name="actA" joint="joint_actA" kp="20" kv="0.5" ctrllimited="true" ctrlrange="-3.14 3.14"/>
+    <position name="actB" joint="joint_actB" kp="20" kv="0.5" ctrllimited="true" ctrlrange="-3.14 3.14"/>
+  </actuator>
+
+</mujoco>

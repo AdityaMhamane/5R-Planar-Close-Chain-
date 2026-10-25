@@ -1,0 +1,9 @@
+# MuJoCo logs
+MUJOCO_LOG.TXT
+
+# Python cache
+__pycache__/
+*.pyc
+
+# System / OS files
+.DS_Store
