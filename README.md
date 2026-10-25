@@ -1,6 +1,6 @@
 # 5R Planar Closed-Chain Robot
 
-A MuJoCo model and inverse-kinematics demo for a 5R planar closed-chain robot. The Python demo computes joint angle (solves IK) for a 5R Planar and moves the actuators following a joint-space trapezoidal velocity profile.
+Contains MuJoCo model and inverse-kinematics demo for a 5R planar closed-chain robot. The Python demo computes joint angle (solves IK) for a 5R Planar and moves the actuators following a joint-space trapezoidal velocity profile.
 
 ## Previews
 
@@ -54,3 +54,4 @@ To try another target, edit `target_x` and `target_y` near the bottom of `IK.py`
 
 1. Make the target position and trajectory timing configurable instead of editing `IK.py`.
 2. Improve documentation for mechanism dimensions, coordinate frame, etc.
+3. Documenting the build for this 5R Planar CAD model.
