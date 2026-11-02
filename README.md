@@ -47,7 +47,7 @@ To try another target, edit `target_x` and `target_y` near the bottom of `IK.py`
 | `IK.py` | Inverse kinematics and joint-space trapezoidal trajectory demo |
 | `scene.py` | Opens and steps the model in the MuJoCo viewer |
 | `meshes/` | STL meshes used by the model |
-| `CADs/` | CAD assembly source files |
+| `CADs/` | CAD assembly files for 3RRR model used in mujoco simulation |
 | `Images&Videos/` | Simulation and CAD previews |
 
 ## Planned improvements
