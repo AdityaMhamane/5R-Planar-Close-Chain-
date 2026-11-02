@@ -15,6 +15,7 @@ This is the CAD I'm currently building and testing. The STEP file is the latest 
 | Part | Quantity / details |
 | --- | --- |
 | NEMA 17 stepper motors | 2 |
+| 5mm X 8mm Aluminum NEMA17 Shaft Coupling | 2 |
 | TB6600 drivers | 2 |
 | Arduino Nano | 1 |
 | M3 × 20 mm screws | 10 |

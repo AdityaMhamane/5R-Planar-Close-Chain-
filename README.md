@@ -48,10 +48,11 @@ To try another target, edit `target_x` and `target_y` near the bottom of `IK.py`
 | `scene.py` | Opens and steps the model in the MuJoCo viewer |
 | `meshes/` | STL meshes used by the model |
 | `CADs/` | CAD assembly files for 3RRR model used in mujoco simulation |
+| `Build/` | Contains CAD assembly files(.step) of 5RRR planar I have builded |
 | `Images&Videos/` | Simulation and CAD previews |
 
 ## Planned improvements
 
 1. Make the target position and trajectory timing configurable instead of editing `IK.py`.
 2. Improve documentation for mechanism dimensions, coordinate frame, etc.
-3. Documenting the build for this 5R Planar CAD model.
+3. ~~Documenting the build for this 5R Planar CAD model.~~. Check `Build/` on how to build your 5R planar 
