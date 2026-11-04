@@ -6,13 +6,20 @@ Contains MuJoCo model, inverse-kinematics demo for a 5R planar closed-chain robo
 
 | CAD assembly | MuJoCo model |
 | --- | --- |
-| ![CAD assembly](<Images&Videos/5R_CAD.gif>) | ![MuJoCo model](<Images&Videos/5R_XML.gif>) |
-
+| ![CAD assembly of MuJoCo model](<Images&Videos/5R_CAD.gif>) | ![MuJoCo model](<Images&Videos/5R_XML.gif>) |
 **Inverse kinematics and joint-space trajectory**
 
-![Inverse-kinematics simulation](<Images&Videos/5R_IK.gif>)
+<p align="center">
+  <img src="Images&amp;Videos/5R_IK.gif" alt="Inverse-kinematics simulation" width="560">
+</p>
 
-## Requirements
+**5R planar build**
+
+| Current CAD | Fabrication |
+| --- | --- |
+| <img src="Build/Images&amp;GIFs/assembly_new_oct31%20v3.png" alt="Current CAD" width="420"> | <img src="Build/Images&amp;GIFs/FrontViewWhatsApp%20Image%202026-11-02%20at%2012.26.55%20PM.jpeg" alt="Fabrication" width="420"> |
+
+## Simulation Requirements
 
 - Python 3
 - MuJoCo's Python package
